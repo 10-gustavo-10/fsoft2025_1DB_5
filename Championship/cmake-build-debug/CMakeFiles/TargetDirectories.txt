@@ -1,0 +1,3 @@
+C:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/cmake-build-debug/CMakeFiles/Championship.dir
+C:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/cmake-build-debug/CMakeFiles/rebuild_cache.dir
