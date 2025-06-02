@@ -1,37 +1,33 @@
-#include "headers/model/League.h"
-#include <iostream>
+#include "headers/controllers/ChampionshipController.h"
+#include "headers/views/View.h"
+#include "headers/model/Team.h"
+#include "headers/model/Referee.h"
+#include "headers/model/Stadium.h"
+#include <memory>
 
 int main() {
-    // Criar campeonato
-    League league;
+    ChampionshipController controller;
 
-    // Criar equipas
-    Team* porto = new Team("FC Porto");
-    Team* benfica = new Team("Benfica");
-    Team* sporting = new Team("Sporting");
+    controller.getLeague().addTeam(new Team("Arouca"));
+    controller.getLeague().addTeam(new Team("AVS"));
+    controller.getLeague().addTeam(new Team("Benfica"));
+    controller.getLeague().addTeam(new Team("Boavista"));
+    controller.getLeague().addTeam(new Team("Braga"));
+    controller.getLeague().addTeam(new Team("Casa Pia"));
+    controller.getLeague().addTeam(new Team("Estoril"));
+    controller.getLeague().addTeam(new Team("Estrela da Amadora"));
+    controller.getLeague().addTeam(new Team("Famalicao"));
+    controller.getLeague().addTeam(new Team("Farense"));
+    controller.getLeague().addTeam(new Team("Gil Vicente"));
+    controller.getLeague().addTeam(new Team("Moreirense"));
+    controller.getLeague().addTeam(new Team("Nacional"));
+    controller.getLeague().addTeam(new Team("Porto"));
+    controller.getLeague().addTeam(new Team("Rio Ave"));
+    controller.getLeague().addTeam(new Team("Santa Clara"));
+    controller.getLeague().addTeam(new Team("Sporting"));
+    controller.getLeague().addTeam(new Team("Vitoria SC"));
 
-    // Adicionar equipas ao campeonato
-    league.addTeam(porto);
-    league.addTeam(benfica);
-    league.addTeam(sporting);
-
-    // Criar e registar jogos
-    Match* m1 = new Match(porto, benfica);
-    m1->setResult(2, 1); // FC Porto 2 - 1 Benfica
-    league.addMatch(m1);
-
-    Match* m2 = new Match(sporting, porto);
-    m2->setResult(0, 3); // Sporting 0 - 3 FC Porto
-    league.addMatch(m2);
-
-    Match* m3 = new Match(benfica, sporting);
-    m3->setResult(2, 2); // Benfica 2 - 2 Sporting
-    league.addMatch(m3);
-
-    // Mostrar classificação
-    league.showStandings();
+    View::menu(controller);
 
     return 0;
 }
-
-

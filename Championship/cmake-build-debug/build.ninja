@@ -63,6 +63,13 @@ build CMakeFiles/Championship.dir/sources/controllers/ChampionshipController.cpp
   OBJECT_DIR = CMakeFiles\Championship.dir
   OBJECT_FILE_DIR = CMakeFiles\Championship.dir\sources\controllers
 
+build CMakeFiles/Championship.dir/sources/model/Cards.cpp.obj: CXX_COMPILER__Championship_unscanned_Debug C$:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/sources/model/Cards.cpp || cmake_object_order_depends_target_Championship
+  DEP_FILE = CMakeFiles\Championship.dir\sources\model\Cards.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/headers
+  OBJECT_DIR = CMakeFiles\Championship.dir
+  OBJECT_FILE_DIR = CMakeFiles\Championship.dir\sources\model
+
 build CMakeFiles/Championship.dir/sources/model/League.cpp.obj: CXX_COMPILER__Championship_unscanned_Debug C$:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/sources/model/League.cpp || cmake_object_order_depends_target_Championship
   DEP_FILE = CMakeFiles\Championship.dir\sources\model\League.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
@@ -79,6 +86,20 @@ build CMakeFiles/Championship.dir/sources/model/Match.cpp.obj: CXX_COMPILER__Cha
 
 build CMakeFiles/Championship.dir/sources/model/Players.cpp.obj: CXX_COMPILER__Championship_unscanned_Debug C$:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/sources/model/Players.cpp || cmake_object_order_depends_target_Championship
   DEP_FILE = CMakeFiles\Championship.dir\sources\model\Players.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/headers
+  OBJECT_DIR = CMakeFiles\Championship.dir
+  OBJECT_FILE_DIR = CMakeFiles\Championship.dir\sources\model
+
+build CMakeFiles/Championship.dir/sources/model/Referee.cpp.obj: CXX_COMPILER__Championship_unscanned_Debug C$:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/sources/model/Referee.cpp || cmake_object_order_depends_target_Championship
+  DEP_FILE = CMakeFiles\Championship.dir\sources\model\Referee.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/headers
+  OBJECT_DIR = CMakeFiles\Championship.dir
+  OBJECT_FILE_DIR = CMakeFiles\Championship.dir\sources\model
+
+build CMakeFiles/Championship.dir/sources/model/Stadium.cpp.obj: CXX_COMPILER__Championship_unscanned_Debug C$:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/sources/model/Stadium.cpp || cmake_object_order_depends_target_Championship
+  DEP_FILE = CMakeFiles\Championship.dir\sources\model\Stadium.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/HP/Documents/GitHub/fsoft2025_1DB_5/Championship/headers
   OBJECT_DIR = CMakeFiles\Championship.dir
@@ -106,7 +127,7 @@ build CMakeFiles/Championship.dir/sources/views/View.cpp.obj: CXX_COMPILER__Cham
 #############################################
 # Link the executable Championship.exe
 
-build Championship.exe: CXX_EXECUTABLE_LINKER__Championship_Debug CMakeFiles/Championship.dir/main.cpp.obj CMakeFiles/Championship.dir/sources/controllers/ChampionshipController.cpp.obj CMakeFiles/Championship.dir/sources/model/League.cpp.obj CMakeFiles/Championship.dir/sources/model/Match.cpp.obj CMakeFiles/Championship.dir/sources/model/Players.cpp.obj CMakeFiles/Championship.dir/sources/model/Team.cpp.obj CMakeFiles/Championship.dir/sources/views/View.cpp.obj
+build Championship.exe: CXX_EXECUTABLE_LINKER__Championship_Debug CMakeFiles/Championship.dir/main.cpp.obj CMakeFiles/Championship.dir/sources/controllers/ChampionshipController.cpp.obj CMakeFiles/Championship.dir/sources/model/Cards.cpp.obj CMakeFiles/Championship.dir/sources/model/League.cpp.obj CMakeFiles/Championship.dir/sources/model/Match.cpp.obj CMakeFiles/Championship.dir/sources/model/Players.cpp.obj CMakeFiles/Championship.dir/sources/model/Referee.cpp.obj CMakeFiles/Championship.dir/sources/model/Stadium.cpp.obj CMakeFiles/Championship.dir/sources/model/Team.cpp.obj CMakeFiles/Championship.dir/sources/views/View.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Championship.dir

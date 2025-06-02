@@ -1,7 +1,10 @@
-#ifndef TEAM_H
-#define TEAM_H
+#pragma once
 
 #include <string>
+#include <vector>
+
+
+class Player;
 
 class Team {
 private:
@@ -10,9 +13,10 @@ private:
     int goalsScored;
     int goalsConceded;
     int matchesPlayed;
+    std::vector<Player*> players;
 
 public:
-    Team(const std::string &name);
+    explicit Team(std::string name);
 
     const std::string &getName() const;
     int getPoints() const;
@@ -22,6 +26,9 @@ public:
     int getGoalDifference() const;
 
     void updateStats(int goalsFor, int goalsAgainst);
+
+
+    void addPlayer(Player* player);
+    const std::vector<Player*>& getPlayers() const;
 };
 
-#endif

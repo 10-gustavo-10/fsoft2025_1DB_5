@@ -8,7 +8,7 @@
 class View {
 public:
     static void menu(ChampionshipController& controller);
-    static void showStandings(const std::vector<Team>& teams);
+    static void showStandings(const std::vector<Team*>& teams);
 };
 
 #endif

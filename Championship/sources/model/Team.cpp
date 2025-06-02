@@ -1,10 +1,11 @@
+#include <utility>
 #include "../../headers/model/Team.h"
-#include <string>
+#include "../../headers/model/Players.h"
 
-Team::Team(const std::string &name)
-        : name(name), points(0), goalsScored(0), goalsConceded(0), matchesPlayed(0) {}
+Team::Team(std::string name)
+    : name(std::move(name)), points(0), goalsScored(0), goalsConceded(0), matchesPlayed(0) {}
 
-const std::string &Team::getName() const {
+const std::string& Team::getName() const {
     return name;
 }
 
@@ -33,12 +34,22 @@ void Team::updateStats(int goalsFor, int goalsAgainst) {
     goalsConceded += goalsAgainst;
     matchesPlayed++;
 
-    if (goalsFor > goalsAgainst)
+    if (goalsFor > goalsAgainst) {
         points += 3;
-    else if (goalsFor == goalsAgainst)
+    } else if (goalsFor == goalsAgainst) {
         points += 1;
-    // derrota: 0 pontos
+    }
+
 }
+
+void Team::addPlayer(Player* player) {
+    players.push_back(player);
+}
+
+const std::vector<Player*>& Team::getPlayers() const {
+    return players;
+}
+
 
 
 
