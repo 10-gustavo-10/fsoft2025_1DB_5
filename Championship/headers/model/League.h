@@ -15,11 +15,11 @@ private:
 public:
     ~League();
 
-    void addTeam(Team* team);               // Adiciona uma equipa ao campeonato
-    void addMatch(Match* match);            // Adiciona um jogo ao campeonato
-    void showStandings() const;             // Mostra a tabela classificativa
-    const std::vector<Team*>& getTeams() const; // Permite aceder à lista de equipas
-    const std::vector<Match*>& getMatches() const; // (Opcional) Aceder aos jogos
+    void addTeam(Team* team);
+    void addMatch(Match* match);
+    void showStandings() const;
+    const std::vector<Team*>& getTeams() const;
+    const std::vector<Match*>& getMatches() const;
 };
 
 #endif

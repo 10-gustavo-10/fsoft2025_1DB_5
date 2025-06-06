@@ -16,31 +16,64 @@ void View::menu(ChampionshipController& controller) {
         std::cout << "\n1. Registrar resultado de partida\n";
         std::cout << "2. Mostrar classificacao\n";
         std::cout << "0. Sair\n";
-        std::cout << "Escolha uma opcao: ";
-        std::cin >> option;
+
+        while (true) {
+            std::cout << "Escolha uma opcao (0 a 2): ";
+            std::cin >> option;
+
+            if (std::cin.fail() || option < 0 || option > 2) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Erro: introduz apenas 0, 1 ou 2.\n";
+            } else {
+                break;
+            }
+        }
 
         if (option == 1) {
             const std::vector<Team*>& teams = controller.getTeams();
+            int numEquipas = static_cast<int>(teams.size());
 
             int id1, id2, g1, g2;
             std::string refereeName, stadiumName, stadiumCity;
             int stadiumCapacity;
 
             std::cout << "\n--- Equipas Disponiveis ---\n";
-            for (size_t i = 0; i < teams.size(); ++i) {
+            for (int i = 0; i < numEquipas; ++i) {
                 std::cout << i << " - " << teams[i]->getName() << '\n';
             }
 
-            std::cout << "ID da equipa da casa: ";
-            std::cin >> id1;
-            std::cout << "ID da equipa visitante: ";
-            std::cin >> id2;
+            while (true) {
+                std::cout << "ID da equipa da casa: ";
+                std::cin >> id1;
+                std::cout << "ID da equipa visitante: ";
+                std::cin >> id2;
+
+                if (std::cin.fail()) {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "⚠ Erro: introduz apenas números válidos!\n";
+                    continue;
+                }
+
+                if (id1 < 0 || id1 >= numEquipas || id2 < 0 || id2 >= numEquipas) {
+                    std::cout << "⚠ Erro: os IDs válidos vão de 0 a " << (numEquipas - 1) << ". Tenta novamente.\n";
+                    continue;
+                }
+
+                if (id1 == id2) {
+                    std::cout << "⚠ Erro: uma equipa não pode jogar contra si mesma. Escolhe equipas diferentes.\n";
+                    continue;
+                }
+
+                break;
+            }
+
             std::cout << "Golos da casa: ";
             std::cin >> g1;
             std::cout << "Golos do visitante: ";
             std::cin >> g2;
-
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // limpa buffer
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             std::cout << "Nome do arbitro: ";
             std::getline(std::cin, refereeName);
@@ -58,7 +91,6 @@ void View::menu(ChampionshipController& controller) {
 
             std::cout << "Cidade do estadio: ";
             std::getline(std::cin, stadiumCity);
-
 
             Referee* ref = new Referee(refereeName, nationality);
             Stadium* stadium = new Stadium(stadiumName, stadiumCapacity, stadiumCity);
@@ -82,8 +114,3 @@ void View::showStandings(const std::vector<Team*>& teams) {
                   << " | Jogos: " << team->getMatchesPlayed() << '\n';
     }
 }
-
-
-
-
-
