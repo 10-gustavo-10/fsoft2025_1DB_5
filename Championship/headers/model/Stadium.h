@@ -10,7 +10,7 @@ private:
     std::string location;
 
 public:
-    Stadium(const std::string& name, int capacity, const std::string& location);
+    Stadium(std::string  name, int capacity, std::string  location);
 
     const std::string& getName() const;
     int getCapacity() const;

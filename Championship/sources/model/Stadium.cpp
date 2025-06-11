@@ -1,7 +1,9 @@
+#include <utility>
+
 #include "../../headers/model/Stadium.h"
 
-Stadium::Stadium(const std::string& name, int capacity, const std::string& location)
-    : name(name), capacity(capacity), location(location) {}
+Stadium::Stadium(std::string  name, int capacity, std::string  location)
+    : name(std::move(name)), capacity(capacity), location(std::move(location)) {}
 
 const std::string& Stadium::getName() const {
     return name;

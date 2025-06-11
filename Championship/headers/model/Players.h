@@ -11,7 +11,7 @@ private:
     int goals;
 
 public:
-    Player(const std::string& name, const std::string& position, int number);
+    Player(std::string  name, std::string  position, int number);
 
     const std::string& getName() const;
     const std::string& getPosition() const;

@@ -9,7 +9,7 @@ private:
     std::string nationality;
 
 public:
-    Referee(const std::string& name, const std::string& nationality);
+    Referee(std::string  name, std::string  nationality);
 
     const std::string& getName() const;
     const std::string& getNationality() const;

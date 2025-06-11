@@ -1,12 +1,19 @@
 CMakeFiles/Championship.dir/sources/model/Stadium.cpp.obj: \
  C:\Users\gusta\Documents\GitHub\fsoft2025_1DB_5\Championship\sources\model\Stadium.cpp \
- C:/Users/gusta/Documents/GitHub/fsoft2025_1DB_5/Championship/headers/model/Stadium.h \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/utility \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
+ C:/Users/gusta/Documents/GitHub/fsoft2025_1DB_5/Championship/headers/model/Stadium.h \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
+ C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memoryfwd.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
@@ -25,7 +32,6 @@ CMakeFiles/Championship.dir/sources/model/Stadium.cpp.obj: \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/x86_64-w64-mingw32/include/_mingw_stat64.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/new_allocator.h \
@@ -33,7 +39,6 @@ CMakeFiles/Championship.dir/sources/model/Stadium.cpp.obj: \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception_defines.h \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/localefwd.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
@@ -58,15 +63,12 @@ CMakeFiles/Championship.dir/sources/model/Stadium.cpp.obj: \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/numeric_traits.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/refwrap.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/range_access.h \
- C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \
  C:/fsost/CLion\ 2025.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/alloc_traits.h \

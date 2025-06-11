@@ -4,8 +4,8 @@
 #include <algorithm>
 
 League::~League() {
-    for (auto* m : matches) delete m;
-    for (auto* t : teams) delete t;
+    for (const auto* m : matches) delete m;
+    for (const auto* t : teams) delete t;
 }
 
 void League::addTeam(Team* team) {
@@ -28,7 +28,7 @@ void League::showStandings() const {
 
     std::vector<Team*> sortedTeams = teams;
 
-    std::sort(sortedTeams.begin(), sortedTeams.end(), [](Team* a, Team* b) {
+    std::sort(sortedTeams.begin(), sortedTeams.end(), [](const Team* a, const Team* b) {
         if (a->getPoints() != b->getPoints())
             return a->getPoints() > b->getPoints();
 

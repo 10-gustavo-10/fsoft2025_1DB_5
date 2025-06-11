@@ -1,7 +1,9 @@
+#include <utility>
+
 #include "../../headers/model/Players.h"
 
-Player::Player(const std::string& name, const std::string& position, int number)
-    : name(name), position(position), number(number), goals(0) {}
+Player::Player(std::string  name, std::string  position, const int number)
+    : name(std::move(name)), position(std::move(position)), number(number), goals(0) {}
 
 const std::string& Player::getName() const {
     return name;

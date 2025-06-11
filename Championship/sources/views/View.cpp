@@ -50,17 +50,17 @@ void View::menu(ChampionshipController& controller) {
                 if (std::cin.fail()) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "⚠ Erro: introduz apenas números válidos!\n";
+                    std::cout << "Erro: introduz apenas números validos!\n";
                     continue;
                 }
 
                 if (id1 < 0 || id1 >= numEquipas || id2 < 0 || id2 >= numEquipas) {
-                    std::cout << "⚠ Erro: os IDs válidos vão de 0 a " << (numEquipas - 1) << ". Tenta novamente.\n";
+                    std::cout << "Erro: os IDs validos vao de 0 a " << (numEquipas - 1) << ". Tenta novamente.\n";
                     continue;
                 }
 
                 if (id1 == id2) {
-                    std::cout << "⚠ Erro: uma equipa não pode jogar contra si mesma.\n";
+                    std::cout << "Erro: uma equipa nao pode jogar contra si mesma.\n";
                     continue;
                 }
 
@@ -76,7 +76,7 @@ void View::menu(ChampionshipController& controller) {
                 if (std::cin.fail() || g1 < 0 || g2 < 0) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "⚠ Erro: os golos devem ser números inteiros não negativos.\n";
+                    std::cout << "Erro: os golos devem ser numeros inteiros nao negativos.\n";
                 } else break;
             }
 
@@ -86,7 +86,7 @@ void View::menu(ChampionshipController& controller) {
                 std::cout << "Nome do arbitro: ";
                 std::getline(std::cin, refereeName);
                 if (refereeName.find_first_of("0123456789") != std::string::npos || refereeName.empty()) {
-                    std::cout << "⚠ Erro: o nome do árbitro deve conter apenas letras.\n";
+                    std::cout << "Erro: o nome do arbitro deve conter apenas letras.\n";
                 } else break;
             }
 
@@ -95,7 +95,7 @@ void View::menu(ChampionshipController& controller) {
                 std::cout << "Nacionalidade do arbitro: ";
                 std::getline(std::cin, nationality);
                 if (nationality.find_first_of("0123456789") != std::string::npos || nationality.empty()) {
-                    std::cout << "⚠ Erro: a nacionalidade deve conter apenas letras.\n";
+                    std::cout << "Erro: a nacionalidade deve conter apenas letras.\n";
                 } else break;
             }
 
@@ -103,7 +103,7 @@ void View::menu(ChampionshipController& controller) {
                 std::cout << "Nome do estadio: ";
                 std::getline(std::cin, stadiumName);
                 if (stadiumName.find_first_of("0123456789") != std::string::npos || stadiumName.empty()) {
-                    std::cout << "⚠ Erro: o nome do estádio deve conter apenas letras.\n";
+                    std::cout << "Erro: o nome do estadio deve conter apenas letras.\n";
                 } else break;
             }
 
@@ -113,7 +113,7 @@ void View::menu(ChampionshipController& controller) {
                 if (std::cin.fail() || stadiumCapacity <= 0) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "⚠ Erro: a capacidade deve ser um número positivo.\n";
+                    std::cout << "Erro: a capacidade deve ser um numero positivo.\n";
                 } else break;
             }
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -122,7 +122,7 @@ void View::menu(ChampionshipController& controller) {
                 std::cout << "Cidade do estadio: ";
                 std::getline(std::cin, stadiumCity);
                 if (stadiumCity.find_first_of("0123456789") != std::string::npos || stadiumCity.empty()) {
-                    std::cout << "⚠ Erro: a cidade deve conter apenas letras.\n";
+                    std::cout << "Erro: a cidade deve conter apenas letras.\n";
                 } else break;
             }
 

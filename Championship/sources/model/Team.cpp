@@ -49,9 +49,3 @@ void Team::addPlayer(Player* player) {
 const std::vector<Player*>& Team::getPlayers() const {
     return players;
 }
-
-
-
-
-
-

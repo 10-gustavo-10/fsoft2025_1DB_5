@@ -1,7 +1,9 @@
+#include <utility>
+
 #include "../../headers/model/Referee.h"
 
-Referee::Referee(const std::string& name, const std::string& nationality)
-    : name(name), nationality(nationality) {}
+Referee::Referee(std::string  name, std::string  nationality)
+    : name(std::move(name)), nationality(std::move(nationality)) {}
 
 const std::string& Referee::getName() const {
     return name;
