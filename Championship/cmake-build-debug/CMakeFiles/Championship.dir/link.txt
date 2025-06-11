@@ -1,0 +1,3 @@
+"C:\fsost\CLion 2025.1.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Championship.dir/objects.a
+C:\fsost\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\Championship.dir/objects.a @CMakeFiles\Championship.dir\objects1.rsp
+C:\fsost\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\Championship.dir/objects.a -Wl,--no-whole-archive -o Championship.exe -Wl,--out-implib,libChampionship.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Championship.dir\linkLibs.rsp

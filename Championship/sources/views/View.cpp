@@ -1,4 +1,3 @@
-
 #include "../../headers/views/View.h"
 #include "../../headers/controllers/ChampionshipController.h"
 #include "../../headers/model/Referee.h"
@@ -8,6 +7,8 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include <vector>
+#include <iomanip>
 
 void View::menu(ChampionshipController& controller) {
     int option;
@@ -25,9 +26,7 @@ void View::menu(ChampionshipController& controller) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cout << "Erro: introduz apenas 0, 1 ou 2.\n";
-            } else {
-                break;
-            }
+            } else break;
         }
 
         if (option == 1) {
@@ -39,9 +38,8 @@ void View::menu(ChampionshipController& controller) {
             int stadiumCapacity;
 
             std::cout << "\n--- Equipas Disponiveis ---\n";
-            for (int i = 0; i < numEquipas; ++i) {
+            for (int i = 0; i < numEquipas; ++i)
                 std::cout << i << " - " << teams[i]->getName() << '\n';
-            }
 
             while (true) {
                 std::cout << "ID da equipa da casa: ";
@@ -62,55 +60,108 @@ void View::menu(ChampionshipController& controller) {
                 }
 
                 if (id1 == id2) {
-                    std::cout << "⚠ Erro: uma equipa não pode jogar contra si mesma. Escolhe equipas diferentes.\n";
+                    std::cout << "⚠ Erro: uma equipa não pode jogar contra si mesma.\n";
                     continue;
                 }
 
                 break;
             }
 
-            std::cout << "Golos da casa: ";
-            std::cin >> g1;
-            std::cout << "Golos do visitante: ";
-            std::cin >> g2;
+            while (true) {
+                std::cout << "Golos da casa: ";
+                std::cin >> g1;
+                std::cout << "Golos do visitante: ";
+                std::cin >> g2;
+
+                if (std::cin.fail() || g1 < 0 || g2 < 0) {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "⚠ Erro: os golos devem ser números inteiros não negativos.\n";
+                } else break;
+            }
+
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-            std::cout << "Nome do arbitro: ";
-            std::getline(std::cin, refereeName);
+            while (true) {
+                std::cout << "Nome do arbitro: ";
+                std::getline(std::cin, refereeName);
+                if (refereeName.find_first_of("0123456789") != std::string::npos || refereeName.empty()) {
+                    std::cout << "⚠ Erro: o nome do árbitro deve conter apenas letras.\n";
+                } else break;
+            }
 
             std::string nationality;
-            std::cout << "Nacionalidade do arbitro: ";
-            std::getline(std::cin, nationality);
+            while (true) {
+                std::cout << "Nacionalidade do arbitro: ";
+                std::getline(std::cin, nationality);
+                if (nationality.find_first_of("0123456789") != std::string::npos || nationality.empty()) {
+                    std::cout << "⚠ Erro: a nacionalidade deve conter apenas letras.\n";
+                } else break;
+            }
 
-            std::cout << "Nome do estadio: ";
-            std::getline(std::cin, stadiumName);
+            while (true) {
+                std::cout << "Nome do estadio: ";
+                std::getline(std::cin, stadiumName);
+                if (stadiumName.find_first_of("0123456789") != std::string::npos || stadiumName.empty()) {
+                    std::cout << "⚠ Erro: o nome do estádio deve conter apenas letras.\n";
+                } else break;
+            }
 
-            std::cout << "Capacidade do estadio: ";
-            std::cin >> stadiumCapacity;
+            while (true) {
+                std::cout << "Capacidade do estadio: ";
+                std::cin >> stadiumCapacity;
+                if (std::cin.fail() || stadiumCapacity <= 0) {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "⚠ Erro: a capacidade deve ser um número positivo.\n";
+                } else break;
+            }
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-            std::cout << "Cidade do estadio: ";
-            std::getline(std::cin, stadiumCity);
+            while (true) {
+                std::cout << "Cidade do estadio: ";
+                std::getline(std::cin, stadiumCity);
+                if (stadiumCity.find_first_of("0123456789") != std::string::npos || stadiumCity.empty()) {
+                    std::cout << "⚠ Erro: a cidade deve conter apenas letras.\n";
+                } else break;
+            }
 
-            Referee* ref = new Referee(refereeName, nationality);
-            Stadium* stadium = new Stadium(stadiumName, stadiumCapacity, stadiumCity);
+            auto* ref = new Referee(refereeName, nationality);
+            auto* stadium = new Stadium(stadiumName, stadiumCapacity, stadiumCity);
 
             controller.registerMatch(id1, id2, g1, g2, ref, stadium);
         }
         else if (option == 2) {
             const std::vector<Team*>& teams = controller.getTeams();
-            showStandings(teams);
+            View::showStandings(teams);
         }
 
     } while (option != 0);
 }
 
 void View::showStandings(const std::vector<Team*>& teams) {
+    std::vector<Team*> sortedTeams = teams;
+
+    std::sort(sortedTeams.begin(), sortedTeams.end(), [](const Team* a, const Team* b) {
+        if (a->getPoints() != b->getPoints())
+            return a->getPoints() > b->getPoints();
+        if (a->getGoalDifference() != b->getGoalDifference())
+            return a->getGoalDifference() > b->getGoalDifference();
+        return a->getGoalsScored() > b->getGoalsScored();
+    });
+
     std::cout << "\n--- Classificacao da Liga ---\n";
-    for (const auto& team : teams) {
-        std::cout << team->getName() << " | Pontos: " << team->getPoints()
-                  << " | GM: " << team->getGoalsScored()
-                  << " | GS: " << team->getGoalsConceded()
-                  << " | Jogos: " << team->getMatchesPlayed() << '\n';
+    std::cout << std::left << std::setw(20) << "Equipa"
+              << std::setw(10) << "Pontos"
+              << std::setw(10) << "GM"
+              << std::setw(10) << "GS"
+              << std::setw(10) << "Jogos" << "\n";
+    std::cout << "-----------------------------------------------------\n";
+    for (const auto& team : sortedTeams) {
+        std::cout << std::left << std::setw(20) << team->getName()
+                  << std::setw(10) << team->getPoints()
+                  << std::setw(10) << team->getGoalsScored()
+                  << std::setw(10) << team->getGoalsConceded()
+                  << std::setw(10) << team->getMatchesPlayed() << '\n';
     }
 }

@@ -2,8 +2,8 @@
 #define VIEW_H
 
 #include <vector>
-#include "../model/Team.h"
 #include "../controllers/ChampionshipController.h"
+#include "../model/Team.h"
 
 class View {
 public:
